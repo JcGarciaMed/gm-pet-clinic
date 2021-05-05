@@ -14,7 +14,7 @@
     </parent>
     <groupId>com.greymatter</groupId>
     <artifactId>gm-pet-clinic</artifactId>
-    <version>0.0.1</version>
+    <version>0.0.2-SNAPSHOT</version>
     <name>gm-pet-clinic</name>
     <description>Demo project for Spring Boot</description>
     <properties>
@@ -39,6 +39,6 @@
 
     <scm>
         <developerConnection>scm:git:https://github.com/JcGarciaMed/gm-pet-clinic.git</developerConnection>
-      <tag>gm-pet-clinic-0.0.1</tag>
+      <tag>HEAD</tag>
   </scm>
 </project>
