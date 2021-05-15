@@ -3,9 +3,11 @@ package com.greymatter.gmpetclinic.services.map;
 import com.greymatter.gmpetclinic.model.Vet;
 import com.greymatter.gmpetclinic.services.CrudService;
 import com.greymatter.gmpetclinic.services.VetService;
+import org.springframework.stereotype.Service;
 
 import java.util.Set;
 
+@Service
 public class VetServiceMap extends AbstractMapService<Vet,Long> implements VetService{
 
     @Override
