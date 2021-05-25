@@ -1,11 +1,13 @@
 package com.greymatter.gmpetclinic.services.map;
 
 import com.greymatter.gmpetclinic.model.Specialty;
-import com.greymatter.gmpetclinic.services.SpecialtiesService;
+import com.greymatter.gmpetclinic.services.SpecialtyService;
+import org.springframework.stereotype.Service;
 
 import java.util.Set;
 
-public class SpecialityMapService extends AbstractMapService<Specialty,Long> implements SpecialtiesService {
+@Service
+public class SpecialityMapService extends AbstractMapService<Specialty,Long> implements SpecialtyService {
 
     @Override
     public Set<Specialty> findAll() {
