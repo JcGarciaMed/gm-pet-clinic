@@ -1,8 +1,6 @@
 package com.greymatter.gmpetclinic.controllers;
 
-import com.greymatter.gmpetclinic.model.Owner;
 import com.greymatter.gmpetclinic.services.OwnerService;
-import org.dom4j.rule.Mode;
 import org.springframework.stereotype.Controller;
 import org.springframework.ui.Model;
 import org.springframework.web.bind.annotation.RequestMapping;
