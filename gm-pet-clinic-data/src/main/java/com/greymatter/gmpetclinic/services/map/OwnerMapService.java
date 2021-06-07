@@ -1,6 +1,7 @@
 package com.greymatter.gmpetclinic.services.map;
 
 import com.greymatter.gmpetclinic.model.Owner;
+import com.greymatter.gmpetclinic.model.Pet;
 import com.greymatter.gmpetclinic.services.OwnerService;
 import com.greymatter.gmpetclinic.services.PetService;
 import com.greymatter.gmpetclinic.services.PetTypeService;
@@ -46,6 +47,10 @@ public class OwnerMapService extends AbstractMapService<Owner, Long> implements 
                         }
                     }else {
                         throw new RuntimeException("Pet Type is required");
+                    }
+                    if(pet.getId() == null){
+                        Pet savedPet = petService.save(pet);
+                        pet.setId(savedPet.getId());
                     }
                 });
             }

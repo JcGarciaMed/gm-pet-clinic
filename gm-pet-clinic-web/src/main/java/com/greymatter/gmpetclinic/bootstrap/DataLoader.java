@@ -1,10 +1,7 @@
 package com.greymatter.gmpetclinic.bootstrap;
 
 import com.greymatter.gmpetclinic.model.*;
-import com.greymatter.gmpetclinic.services.OwnerService;
-import com.greymatter.gmpetclinic.services.PetTypeService;
-import com.greymatter.gmpetclinic.services.SpecialtyService;
-import com.greymatter.gmpetclinic.services.VetService;
+import com.greymatter.gmpetclinic.services.*;
 import org.springframework.boot.CommandLineRunner;
 import org.springframework.stereotype.Component;
 
@@ -17,12 +14,14 @@ public class DataLoader implements CommandLineRunner {
     private final VetService vetService;
     private final PetTypeService petTypeService;
     private final SpecialtyService specialtyService;
+    private final VisitService visitService;
 
-    public DataLoader(OwnerService ownerService, VetService vetService, PetTypeService petTypeService, SpecialtyService specialtyService) {
+    public DataLoader(OwnerService ownerService, VetService vetService, PetTypeService petTypeService, SpecialtyService specialtyService, VisitService visitService) {
         this.ownerService = ownerService;
         this.vetService = vetService;
         this.petTypeService = petTypeService;
         this.specialtyService = specialtyService;
+        this.visitService = visitService;
     }
 
     @Override
@@ -34,6 +33,15 @@ public class DataLoader implements CommandLineRunner {
     }
 
     private void loadData() {
+        Owner ownertest = new Owner();
+        Visit visittest =  new Visit();
+        System.out.println("Prueba");
+        System.out.println(ownertest.getId());
+        System.out.println(visittest.getId());
+
+
+
+
         PetType dog = new PetType();
         dog.setName("Dog");
         PetType savedDogType = petTypeService.save(dog);
@@ -79,6 +87,7 @@ public class DataLoader implements CommandLineRunner {
         owner2.setAddress("Gregprop Escobvedo 552");
         owner2.setCity("PIURA");
         owner2.setTelephone("991223323");
+        System.out.println("prueba2: " + owner2.getId());
 
         Pet pet2 = new Pet();
         pet2.setPetType(savedCatType);
@@ -86,9 +95,17 @@ public class DataLoader implements CommandLineRunner {
         pet2.setBirthDate(LocalDate.now());
         pet2.setName("Mishi");
         owner2.getPets().add(pet2);
+        System.out.println("prueba3: " + owner2.getId());
 
 
         ownerService.save(owner2);
+        System.out.println("prueba4: " + owner2.getId());
+
+        Visit visit = new Visit();
+        visit.setPet(pet2);
+        visit.setDate(LocalDate.now());
+        visit.setDescription("Sneeze Kitty");
+        visitService.save(visit);
 
         System.out.println("Loading Owners");
 

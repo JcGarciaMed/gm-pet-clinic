@@ -2,9 +2,10 @@ package com.greymatter.gmpetclinic.services.map;
 
 import com.greymatter.gmpetclinic.model.Visit;
 import com.greymatter.gmpetclinic.services.VisitService;
+import org.springframework.stereotype.Service;
 
 import java.util.Set;
-
+@Service
 public class VisitMapService extends AbstractMapService<Visit, Long> implements VisitService {
 
     @Override
@@ -21,6 +22,10 @@ public class VisitMapService extends AbstractMapService<Visit, Long> implements 
     public Visit save(Visit visit) {
         if (visit.getPet()==null || visit.getPet().getOwner()==null || visit.getPet().getId()==null
             || visit.getPet().getOwner().getId()==null){
+            System.out.println(visit.getPet());
+            System.out.println(visit.getPet().getOwner());
+            System.out.println(visit.getPet().getId());
+            System.out.println(visit.getPet().getOwner().getId());
             throw new RuntimeException("Invalid Visit");
         }
         return super.save(visit);
