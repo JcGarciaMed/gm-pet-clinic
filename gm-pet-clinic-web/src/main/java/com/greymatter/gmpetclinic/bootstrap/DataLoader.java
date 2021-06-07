@@ -33,14 +33,6 @@ public class DataLoader implements CommandLineRunner {
     }
 
     private void loadData() {
-        Owner ownertest = new Owner();
-        Visit visittest =  new Visit();
-        System.out.println("Prueba");
-        System.out.println(ownertest.getId());
-        System.out.println(visittest.getId());
-
-
-
 
         PetType dog = new PetType();
         dog.setName("Dog");
