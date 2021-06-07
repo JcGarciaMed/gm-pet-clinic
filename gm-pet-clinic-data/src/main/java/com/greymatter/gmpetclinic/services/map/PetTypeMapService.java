@@ -2,12 +2,14 @@ package com.greymatter.gmpetclinic.services.map;
 
 import com.greymatter.gmpetclinic.model.PetType;
 import com.greymatter.gmpetclinic.services.PetTypeService;
+import org.springframework.context.annotation.Profile;
 import org.springframework.stereotype.Component;
 import org.springframework.stereotype.Service;
 
 import java.util.Set;
 
 @Service
+@Profile({"default", "map"})
 public class PetTypeMapService extends AbstractMapService<PetType, Long> implements PetTypeService {
 
     @Override
