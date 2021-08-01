@@ -29,7 +29,6 @@ public class VetController {
 
     @GetMapping("/api/vets")
     public @ResponseBody  Set<Vet> getVetsJson(){
-
         return vetService.findAll();
     }
 }
